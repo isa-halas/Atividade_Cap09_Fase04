@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Linkando Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Despesa</title>
+
+  <!-- Linkando Font Awesome pelo CND -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Linkando Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Linkando Fonte Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Linkando CSS -->
+  <link rel="stylesheet" href="./assets/CSS/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="container-fluid container-md ps-4 pe-5">
+    <div class="header-wrapper d-flex my-4">
+      <a href="#"><img src="./assets/img/icon-back.svg" alt=""></a>
+      <h1 class="my-auto ms-4 ms-sm-5 text-light">Nova despesa</h1>
+    </div>
+
+    <!-- Valor do lancamento -->
+    <div class="payment-amount-wrapper mb-3">
+      <label for="payment-amount" class="form-label d-block text-end text-light">Valor da despesa</label>
+      <input type="text" class="form-control money p-0 text-end text-light fs-1 border-0" id="payment-amount"
+        placeholder="0,00">
+    </div>
+  </header>
+
+
+  <!-- Form para descrição do lançamento -->
+  <form class="my-form container-fluid container-md mb-5 p-5 pb-0 bg-white rounded-4">
+    <div class="page px-2 px-lg-4 py-lg-2">
+      <!-- Botão para pagamento concluído -->
+      <div class="row">
+        <div class="col-xl me-xl-4 form-switch-wrapper input-group d-flex justify-content-between pb-4"
+          id="form-switch-paid-wrapper">
+          <label class="form-check-label" for="paid-payment"><i
+              class="fa-regular fa-circle-check ms-1 ps-2 me-4 "></i><span>Marcar como
+              pago</span></label>
+          <div class="form-check form-switch form-check-reverse me-lg-1 me-xl-2">
+            <input class="form-check-input" type="checkbox" role="switch" id="paid-payment">
+          </div>
+        </div>
+
+        <div class="col-xl mx-xl-4 w-100"></div>
+        <div class="col-xl ms-xl-4 w-100"></div>
+      </div>
+      <!-- Descrição do lançamento -->
+      <div class="row">
+        <div class="input-group col-lg me-lg-3">
+          <label for="payment-description" class="input-group-text" id="basic-addon3"><img
+              src="./assets/img/icon-edit.svg" alt=""></label>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="payment-description" placeholder="Descrição"
+              aria-describedby="basic-addon3 basic-addon4">
+            <label for="payment-description">Descrição</label>
+          </div>
+        </div>
+
+        <!-- Data do lançamento -->
+        <div class="input-group col-lg ms-lg-3">
+          <label for="date-description" class="input-group-text" id="basic-addon3"><i class="fa-regular fa-calendar"
+              id="icon-calendar"></i></label>
+
+          <div class="form-floating">
+            <input type="text" class="form-control date" id="date-description" placeholder="Data"
+              aria-describedby="basic-addon3 basic-addon4">
+            <label for="date-description">Data</label>
+          </div>
+        </div>
+      </div>
+      <!-- Categoria do lançamento -->
+      <div class="row">
+        <div class="input-group col-lg me-lg-3">
+          <label for="payment-category" class="input-group-text mx-1 px-2 py-0"><img
+              src="./assets/img/icon-category.svg"></label>
+          <select class="form-select py-4" id="payment-category" aria-label="Default select example">
+            <option disabled selected>Categorias</option>
+            <option value="1">Casa</option>
+            <option value="2">Educação</option>
+            <option value="3">Eletrônicos</option>
+            <option value="4">Lazer</option>
+            <option value="5">Restaurante</option>
+            <option value="6">Saúde</option>
+            <option value="7">Serviços</option>
+            <option value="8">Supermercado</option>
+            <option value="9">Transporte</option>
+            <option value="10">Roupa</option>
+            <option value="11">Viagem</option>
+            <option value="12">Outros</option>
+          </select>
+        </div>
+
+        <!-- Conta do lançamento -->
+        <div class="input-group col-lg ms-lg-3">
+          <label for="payment-account" class="input-group-text mx-1 px-2 py-0"><img
+              src="./assets/img/icon-wallet.svg"></label>
+          <select class="form-select py-4" id="payment-account" aria-label="Default select example">
+            <option disabled selected>Contas</option>
+            <option value="1">Carteira</option>
+            <option value="2">Conta Bradesco</option>
+            <option value="3">Conta Inter</option>
+            <option value="4">Conta Nubank</option>
+            <option value="5">Conta Santander</option>
+            <option value="6">Outros</option>
+          </select>
+        </div>
+      </div>
+      <!-- Detalhes do lançamento -->
+      <div class="row my-lg-3">
+        <div class="col-12 accordion accordion-flush px-0" id="accordion-details">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button mx-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#payment-details" aria-expanded="true" aria-controls="payment-details">Detalhar
+                lançamento
+              </button>
+            </h2>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="payment-details" class="accordion-collapse collapse show" data-bs-parent="#accordion-details">
+        <div class="accordion-body p-0">
+          <!-- Botão para lançamento único -->
+          <div class="row my-lg-3">
+            <div
+              class="col-lg-6 col-xl me-xl-4 form-switch-wrapper input-group d-flex justify-content-between py-3 border-0">
+              <label class="form-check-label" for="single-payment"><i
+                  class="fa-regular fa-money-bill-1 ms-1 ps-2 me-4"></i><span>Despesa
+                  única</span></label>
+              <div class="form-check form-switch form-check-reverse">
+                <input class="form-check-input" type="radio" name="payment-detail" role="switch" id="single-payment"
+                  selected>
+              </div>
+            </div>
+
+            <!-- Botão para lançamento fixo-->
+            <div
+              class="col-lg-6 col-xl mx-xl-4 form-switch-wrapper input-group d-flex justify-content-between py-3 border-0">
+              <label class="form-check-label" for="fixed-payment"><img class="ms-1 ps-2 me-4"
+                  src="./assets/img/icon-fixed.svg"><span>Despesa
+                  fixa</span></label>
+              <div class="form-check form-switch form-check-reverse">
+                <input class="form-check-input" type="radio" name="payment-detail" role="switch" id="fixed-payment">
+              </div>
+            </div>
+
+            <!-- Botão para lançamento parcelado-->
+            <div
+              class="col-lg-6 col-xl ms-xl-4 form-switch-wrapper input-group d-flex justify-content-between py-3 border-0">
+              <label class="form-check-label" for="payment-in-installments"><img class="ms-1 ps-2 me-4"
+                  src="./assets/img/icon-repeat.svg"><span>Despesa
+                  parcelada</span></label>
+              <div class="form-check form-switch form-check-reverse">
+                <input class="form-check-input" type="radio" name="payment-detail" role="switch"
+                  id="payment-in-installments">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Linha divisão tipo de despesas -->
+          <div class="row">
+            <div id="row-accordion" class="w-100"></div>
+          </div>
+
+          <!-- Observação do lançamento -->
+          <div class="row">
+            <div class="input-group col-lg me-lg-3" id="note-wrapper">
+              <label for="payment-note" class="input-group-text" id="basic-addon3"><img src="./assets/img/icon-note.svg"
+                  alt=""></label>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="payment-note" placeholder="Descrição"
+                  aria-describedby="basic-addon3 basic-addon4">
+                <label for="payment-note">Observação</label>
+              </div>
+            </div>
+
+            <!-- Anexos do lançamento -->
+            <div class="input-group col-lg pt-3 ms-lg-3 pt-lg-0 border-0" id="file-btn-wrapper">
+              <label class="input-group-text" for="file-payment">
+                <i class="fa-solid fa-paperclip"></i>
+              </label>
+              <input type="file" class="form-control visually-hidden" id="file-payment" accept="image/*" multiple
+                onchange="showFiles(this)">
+              <button class="btn my-form-btn" type="button" onclick="document.getElementById('file-payment').click()">
+                Adicionar anexo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-save-wrapper container sticky-bottom p-3 text-center d-md-none w-100">
+        <button type="submit" class="save-btn btn btn-lg btn-success border-0 rounded-5 shadow-sm ">
+          Salvar
+          <span>
+            <i class="fa-solid fa-check text-white"></i>
+          </span>
+        </button>
+      </div>
+      <div class="btn-save-wrapper container sticky-bottom p-4 text-center d-none d-md-block">
+        <button type="submit" class="save-btn btn btn-lg btn-success border-0 rounded-5 shadow-sm">
+          Salvar
+          <span>
+            <i class="fa-solid fa-check text-white"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  </main>
+
+  <!-- Linkando JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Linkando jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="./assets/scripts/index.js"></script>
+</body>
+
+</html>
